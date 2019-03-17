@@ -1,0 +1,19 @@
+3.16.2019
+
+Running a django local server on http://127.0.0.1:8000/ does work, however my virtual env is
+looking for /catalog/ due to my fact that i set up this v-env for the locallibrary django tutorial.
+On my computer I will open a anaconda prompt (cmd) activate my django virtual env and runserver:
+
+(django) C:\Users\HyperSentient\Documents\GitHub\web-molmag-data>python manage.py runserver
+
+
+Running a django website through heroku locally is also very simple.
+
+a Procfile.windows is required to launch the local heroku testing server. I prefer heroku because
+it does not interfere or look for /catalog/ on my current setup. the execution command for a 
+heroku local testing site is below:
+
+(django) C:\Users\HyperSentient\Documents\GitHub\web-molmag-data>heroku local web -f Procfile.windows
+
+
+both of these local testing dev environments are useful and should be equivalent on a fresh install.
