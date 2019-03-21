@@ -18,6 +18,7 @@ class Reference(models.Model):
 
 class Compound(models.Model):
     submitter = models.ForeignKey(User, editable=False, on_delete=models.SET_NULL, null=True, blank=True)
+    checker = models.ForeignKey(User, editable=Flase, on_delete=models.SET_NULL, null=True, blank=True)
     doi = models.ForeignKey(Reference, on_delete=models.SET_NULL, null=True, blank=True)
     info = JSONField(default={
         'dimensionality': 0,
