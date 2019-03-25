@@ -1,5 +1,7 @@
 3.16.2019
 
+DJANGO_SETTINGS_MODULE = molmag.settings.dev
+
 Running a django local server on http://127.0.0.1:8000/ does work, however my virtual env is
 looking for /catalog/ due to my fact that i set up this v-env for the locallibrary django tutorial.
 On my computer I will open a anaconda prompt (cmd) activate my django virtual env and runserver:
