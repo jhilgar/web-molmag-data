@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from molmag.views import HomePageView
+from molmag.views import HomePageView, AboutPageView
 
 urlpatterns = [
 	path('', HomePageView.as_view()),
