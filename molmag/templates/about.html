@@ -21,9 +21,9 @@
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="../" class="nav-link"><i class="fas fa-home"></i>&nbsp;Home</a></li>
-            <li class="nav-item"><a href="../search" class="nav-link"><i class="fas fa-search"></i>&nbsp;Search</a></li>
-            <li class="nav-item"><a href="../documentation" class="nav-link"><i class="fas fa-book"></i>&nbsp;Documentation</a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+            <li class="nav-item"><a href="{% url 'search' %}" class="nav-link"><i class="fas fa-search"></i>&nbsp;Search</a></li>
+            <li class="nav-item"><a href=""{% url 'documentation' %}"" class="nav-link"><i class="fas fa-book"></i>&nbsp;Documentation</a></li>
             <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-question"></i>&nbsp;About</a></li>
             <li class="nav-item"><a href="../admin" class="nav-link"><i class="fas fa-lock"></i>&nbsp;Admin</a></li>
           </ul>

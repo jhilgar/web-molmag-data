@@ -11,7 +11,6 @@ class SearchPageView(TemplateView):
  
 	template_name = "search.html"
 
-
 class DocumentationPageView(TemplateView):
 
 	template_name = "documentation.html"
