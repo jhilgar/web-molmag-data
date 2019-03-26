@@ -18,9 +18,9 @@ from django.urls import path
 from molmag.views import HomePageView, AboutPageView, SearchPageView, DocumentationPageView
 
 urlpatterns = [
-	path('', HomePageView.as_view()),
+	path('', HomePageView.as_view(), name='home'),
 	path('about/', AboutPageView.as_view(), name='about'),
-	path('admin/', admin.site.urls),
 	path('documentation/', DocumentationPageView.as_view(), name='documentation'),
-	path('search/', SearchPageView.as_view(), name='search')
+	path('search/', SearchPageView.as_view(), name='search'),
+    path('admin/', admin.site.urls, name='admin'),
 ]
