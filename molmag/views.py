@@ -7,3 +7,12 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
 
     template_name = "about.html"
+	
+	
+class SearchPageView(TemplateView):
+
+    template_name = "search.html"
+	
+class DocumentationPageView(TemplateView):
+
+    template_name = "documentation.html"

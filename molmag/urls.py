@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from molmag.views import HomePageView, AboutPageView
+from molmag.views import HomePageView, AboutPageView, SearchPageView, DocumentationPageView
 
 urlpatterns = [
 	path('', HomePageView.as_view()),
 	path('about/', AboutPageView.as_view(), name='about'),
 	path('admin/', admin.site.urls),
+	path('documentation/', DocumentationPageView.as_view(), name='documentation'),
+	path('search/', SearchPageView.as_view(), name='search')
 ]
