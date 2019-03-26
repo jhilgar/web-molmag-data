@@ -1,7 +1,6 @@
 from django.contrib import admin
-from datastore.models import Author, Magnet, Dimension
+from datastore.models import Reference, Compound
 # Register your models here.
 
-admin.site.register(Author)
-admin.site.register(Magnet)
-admin.site.register(Dimension)
+admin.site.register(Reference)
+admin.site.register(Compound)

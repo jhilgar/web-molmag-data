@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static "magneticdata/css/bootstrap.min.css" %}" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "magneticdata/css/style.css" %}">
+    <title>Molecular Magnetism DB</title>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">molecular <i class="fas fa-magnet" style="color: #66b3ff; font-size: 1.0em;"></i> database</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="../" class="nav-link"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-search"></i>&nbsp;Search</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-book"></i>&nbsp;Documentation</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-question"></i>&nbsp;About</a></li>
+            <li class="nav-item"><a href="../admin" class="nav-link"><i class="fas fa-lock"></i>&nbsp;Admin</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <div class="container text-center">
+        <i class="fas fa-magnet" style="color: #66b3ff; font-size: 6.0em;"></i><br>
+        <h1>The Molecular Magnetism Database</h1>
+        <p>A project to catalog molecules and molecular systems exhibiting long time-scale magnetism.</p>
+      </div>
+    </div>
+
+    <!-- Glyph bar -->
+    <div class="container-fluid" style="background-color: #efefef; border-top: 1px solid #d5d5d5; border-bottom: 1px solid #d5d5d5;">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-6 col-md-3" style="padding: 10px;"><img src="{% static "magneticdata/img/glyph1.png" %}" height="100px" width="auto"></div>
+          <div class="col-6 col-md-3" style="padding: 10px;"><img src="{% static "magneticdata/img/glyph4.png" %}" height="100px" width="auto"></div>
+          <div class="col-6 col-md-3" style="padding: 10px;"><img src="{% static "magneticdata/img/glyph2.png" %}" height="100px" width="auto"></div>
+          <div class="col-6 col-md-3" style="padding: 10px;"><img src="{% static "magneticdata/img/glyph3.png" %}" height="100px" width="auto"></div>
+        </div>
+      </div>
+    </div>
+
+BODY TEXT FOR ABOUT PAGE
+
+    <!-- Footer -->
+    <div class="container-fluid text-center text-md-left" style="background-color: #efefef; border-top: 1px solid #d5d5d5;">
+      <div class="row">
+        <div class="col-md-12 py-3 text-center">
+          <h5 class="text-uppercase">Powered by</h5>
+          <img src="{% static "magneticdata/img/Bootsrap_logo.svg" %}" width="30" height="30" alt="Smiley Face">&nbsp;
+          <img src="{% static "magneticdata/img/Django_logo.svg" %}" width="auto" height="30" alt="Smiley Face">&nbsp;
+          <img src="{% static "magneticdata/img/Postgresql_logo.svg" %}" width="auto" height="30" alt="Smiley Face">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 py-3 text-center">
+        Â© copyright :: rinehartgroup.ucsd.edu :: 2019
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="{% static "magneticdata/js/bootstrap.min.js" %}" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>                 
