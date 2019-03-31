@@ -51,7 +51,7 @@ def index(request):
 
     doix1 = num_compounds - 4
     doix2 = doix1 + 1 
-    doix3 = doix2 + 2 
+    doix3 = doix1 + 2 
 	##Featured entries
     
     fst_feat = Compound.objects.values_list('doi', flat=True).get(pk=x1)
