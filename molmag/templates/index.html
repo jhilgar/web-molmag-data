@@ -59,7 +59,7 @@
         <div class="row text-center">
           <div class="col-12 col-md-4" style="padding: 7px;">
             <div class="card shadow">
-              <img class="card-img-top" <img src="{% static "magneticdata/img/glyph1.png" %}" height="200" width="auto">
+              <img class="card-img-top" <img src="{% static "magneticdata/img/glyph1.png" %}" height="125" width="auto">
               <div class="card-body">
                 <h5 class="card-title"> {{fst_feat}} </h5>
                 <p class="card-text"> 
@@ -72,13 +72,15 @@
 				<b> DOI </b>: <a href="https://www.google.com/search?q={{ fst_doi }}">{{ fst_doi }} </a>
 				<p>
 				<b> Information </b>: {{ fst_info }}
+				<p>
+				<a href="search/{{ fst_url }}"> Details </a>
               </div>
               <div class="card-footer"><small class="text-muted"> <b> Updated </b> : {{ fst_update }}</small></div>
             </div>
           </div>
 		<div class="col-12 col-md-4" style="padding: 7px;">
             <div class="card shadow">
-              <img class="card-img-top" <img src="{% static "magneticdata/img/glyph2.png" %}" height="200" width="auto">
+              <img class="card-img-top" <img src="{% static "magneticdata/img/glyph2.png" %}" height="125" width="auto">
               <div class="card-body">
                 <h5 class="card-title"> {{snd_feat}} </h5>
                 <p class="card-text"> 
@@ -86,11 +88,13 @@
 				<p>
 				<b> Dimension </b>: {{ snd_dim }}D
 				<p>
-				<b> U-effective </b>: {{ snd_ueff }} wavenumbers
+				<b> Barrier Height </b>: {{ snd_ueff }} wavenumbers
 				<p>
 				<b> DOI </b>: <a href="https://www.google.com/search?q={{ snd_doi }}">{{ snd_doi }} </a>
 				<p>
 				<b> Information </b>: {{ snd_info }}
+				<p>
+				<a href="search/{{ snd_url }}"> Details </a>
 				
 				
               </div>
@@ -99,7 +103,7 @@
           </div>
 		<div class="col-12 col-md-4" style="padding: 7px;">
             <div class="card shadow">
-              <img class="card-img-top" <img src="{% static "magneticdata/img/glyph1.png" %}" height="200" width="auto">
+              <img class="card-img-top" <img src="{% static "magneticdata/img/glyph1.png" %}" height="125" width="auto">
               <div class="card-body">
                 <h5 class="card-title"> {{trd_feat}} </h5>
                 <p class="card-text"> 
@@ -107,11 +111,13 @@
 				<p>
 				<b> Dimension </b>: {{ trd_dim }}D
 				<p>
-				<b> U-effective </b>: {{ trd_ueff }} wavenumbers
+				<b> Barrier Height </b>: {{ trd_ueff }} wavenumbers
 				<p>
 				<b> DOI </b>: <a href="https://www.google.com/search?q={{ trd_doi }}">{{ trd_doi }} </a>
 				<p>
 				<b> Information </b>: {{ trd_info }}
+				<p>
+				<a href="search/{{ trd_url }}"> Details </a>
 				
               </div>
               <div class="card-footer"><small class="text-muted"> <b> Updated </b> : {{ trd_update }}</small></div>
@@ -173,7 +179,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 py-3 text-center">
-        © copyright :: rinehartgroup.ucsd.edu :: 2018
+        © copyright :: rinehartgroup.ucsd.edu :: 2019
         </div>
       </div>
     </div>

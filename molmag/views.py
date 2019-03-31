@@ -18,6 +18,7 @@ class DocumentationPageView(TemplateView):
 		
 class MagnetListView(generic.ListView):
 	model = Compound
+	paginate_by = 4
 	
 class MagnetDetailView(generic.DetailView):
     model = Compound	
@@ -61,6 +62,7 @@ def index(request):
     fst_doi = Reference.objects.values_list('doi', flat=True).get(pk=doix1)
     fst_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x1)
     fst_info = Compound.objects.values_list('info', flat=True).get(pk=x1)
+    fst_url = fst_feat + 4
 	
     snd_feat = Compound.objects.values_list('doi', flat=True).get(pk=x2)
     snd_comp = Compound.objects.values_list('formula', flat=True).get(pk=x2)
@@ -69,6 +71,7 @@ def index(request):
     snd_doi = Reference.objects.values_list('doi', flat=True).get(pk=doix2)
     snd_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x2)
     snd_info = Compound.objects.values_list('info', flat=True).get(pk=x2)
+    snd_url = fst_feat + 5
 	
     trd_feat = Compound.objects.values_list('doi', flat=True).get(pk=x3)
     trd_comp = Compound.objects.values_list('formula', flat=True).get(pk=x3)
@@ -77,6 +80,7 @@ def index(request):
     trd_doi = Reference.objects.values_list('doi', flat=True).get(pk=doix3)
     trd_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x3)
     trd_info = Compound.objects.values_list('info', flat=True).get(pk=x3)
+    trd_url = fst_feat + 6
 	
 
     context = {
@@ -95,6 +99,7 @@ def index(request):
 		'fst_doi': fst_doi,
 		'fst_update': fst_update,
 		'fst_info': fst_info,
+		'fst_url': fst_url,
 		
 		'snd_feat': snd_feat,
 		'snd_comp': snd_comp,
@@ -103,6 +108,7 @@ def index(request):
 		'snd_doi': snd_doi,
 		'snd_update': snd_update,
 		'snd_info': snd_info,
+		'snd_url': snd_url,
 		
 		'trd_feat': trd_feat,
 		'trd_comp': trd_comp,
@@ -111,6 +117,7 @@ def index(request):
 		'trd_doi': trd_doi,
 		'trd_update': trd_update,
 		'trd_info': trd_info,
+		'trd_url': trd_url,
 		
     }
 
