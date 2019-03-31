@@ -51,6 +51,7 @@
         </div>
       </div>
     </div>
+	
    <!-- Featured cards -->
     <div class="container-fluid shadow text-center" style="background-image: linear-gradient(to bottom, #e6e6ff, #66b3ff); padding-top: 70px; padding-bottom: 70px; border-bottom: 1px solid #d5d5d5;">
       <div class="container">
@@ -66,11 +67,11 @@
 				<p>
 				<b> Dimension </b>: {{ fst_dim }}D
 				<p>
-				<b> U-effective </b>: {{ fst_ueff }}
+				<b> Barrier Height </b>: {{ fst_ueff }} wavenumbers
 				<p>
 				<b> DOI </b>: <a href="https://www.google.com/search?q={{ fst_doi }}">{{ fst_doi }} </a>
 				<p>
-				
+				<b> Information </b>: {{ fst_info }}
               </div>
               <div class="card-footer"><small class="text-muted"> <b> Updated </b> : {{ fst_update }}</small></div>
             </div>
@@ -89,6 +90,7 @@
 				<p>
 				<b> DOI </b>: <a href="https://www.google.com/search?q={{ snd_doi }}">{{ snd_doi }} </a>
 				<p>
+				<b> Information </b>: {{ snd_info }}
 				
 				
               </div>
@@ -109,6 +111,7 @@
 				<p>
 				<b> DOI </b>: <a href="https://www.google.com/search?q={{ trd_doi }}">{{ trd_doi }} </a>
 				<p>
+				<b> Information </b>: {{ trd_info }}
 				
               </div>
               <div class="card-footer"><small class="text-muted"> <b> Updated </b> : {{ trd_update }}</small></div>

@@ -1,7 +1,7 @@
 from django.views.generic.base import TemplateView
 from django.views import generic
 from django.shortcuts import render
-from datastore.models import Compound
+from datastore.models import Compound, Reference
 
 
 class AboutPageView(TemplateView):
@@ -46,14 +46,37 @@ def index(request):
 	
 	##logic for selecting 3 magnets based on the total db size, the selection only changes as the DB has more entries added.
     x1 = num_compounds
-    x2 = x1 - 1
-    x3 = x1 - 2
+    x2 = x1 + 1
+    x3 = x1 + 2
 
-	
 	
 	##Featured entries
-
     
+    fst_feat = Compound.objects.values_list('doi', flat=True).get(pk=x1)
+    fst_comp = Compound.objects.values_list('formula', flat=True).get(pk=x1)
+    fst_ueff = Compound.objects.values_list('ueff', flat=True).get(pk=x1)
+    fst_dim = Compound.objects.values_list('dimensionality', flat=True).get(pk=x1)
+    fst_doi = Reference.objects.values_list('doi', flat=True).get(pk=1)
+    fst_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x1)
+    fst_info = Compound.objects.values_list('info', flat=True).get(pk=x1)
+	
+    snd_feat = Compound.objects.values_list('doi', flat=True).get(pk=x2)
+    snd_comp = Compound.objects.values_list('formula', flat=True).get(pk=x2)
+    snd_ueff = Compound.objects.values_list('ueff', flat=True).get(pk=x2)
+    snd_dim = Compound.objects.values_list('dimensionality', flat=True).get(pk=x2)
+    snd_doi = Reference.objects.values_list('doi', flat=True).get(pk=2)
+    snd_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x2)
+    snd_info = Compound.objects.values_list('info', flat=True).get(pk=x2)
+	
+    trd_feat = Compound.objects.values_list('doi', flat=True).get(pk=x3)
+    trd_comp = Compound.objects.values_list('formula', flat=True).get(pk=x3)
+    trd_ueff = Compound.objects.values_list('ueff', flat=True).get(pk=x3)
+    trd_dim = Compound.objects.values_list('dimensionality', flat=True).get(pk=x3)
+    trd_doi = Reference.objects.values_list('doi', flat=True).get(pk=3)
+    trd_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x3)
+    trd_info = Compound.objects.values_list('info', flat=True).get(pk=x3)
+	
+
     context = {
 
 		'num_magnets': num_compounds,
@@ -62,6 +85,30 @@ def index(request):
 		'num_2d': num_2d,
 		'num_3d': num_3d,
 		'num_visits':num_visits,
+		
+		'fst_feat': fst_feat,
+		'fst_comp': fst_comp,
+		'fst_ueff': fst_ueff,
+		'fst_dim': fst_dim,
+		'fst_doi': fst_doi,
+		'fst_update': fst_update,
+		'fst_info': fst_info,
+		
+		'snd_feat': snd_feat,
+		'snd_comp': snd_comp,
+		'snd_ueff': snd_ueff,
+		'snd_dim': snd_dim,
+		'snd_doi': snd_doi,
+		'snd_update': snd_update,
+		'snd_info': snd_info,
+		
+		'trd_feat': trd_feat,
+		'trd_comp': trd_comp,
+		'trd_ueff': trd_ueff,
+		'trd_dim': trd_dim,
+		'trd_doi': trd_doi,
+		'trd_update': trd_update,
+		'trd_info': trd_info,
 		
     }
 
