@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import JSONField
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 def default_reference_info():
     return {
@@ -12,12 +13,8 @@ def default_reference_info():
     }
 
 def default_compound_info():
-    return {
-        'dimensionality': 0,
-        'ccdc': '',
-        'formula': '',
-        'ueff': '',
-    }
+    return {}
+
 class Reference(models.Model):
     submitter = models.ForeignKey(User, editable=False, on_delete=models.SET_NULL, null=True, blank=True)
     doi = models.CharField('DOI', max_length=200, unique=True)
@@ -29,7 +26,13 @@ class Reference(models.Model):
 class Compound(models.Model):
     submitter = models.ForeignKey(User, editable=False, on_delete=models.SET_NULL, null=True, blank=True)
     checker = models.ForeignKey(User, editable=False, on_delete=models.SET_NULL, null=True, blank=True, related_name='checker')
-    doi = models.ForeignKey(Reference, on_delete=models.SET_NULL, null=True, blank=True)
+    doi = models.ForeignKey(Reference, on_delete=models.CASCADE)
+    formula = models.CharField('Formula', max_length=50)
+    ccdc = models.CharField('CCDC Identifier', max_length=9)
+    dimensionality = models.IntegerField(default=0, validators=[MaxValueValidator(3), MinValueValidator(0)])
+    ueff = models.FloatField('Effective Barrier', validators=[MaxValueValidator(10000), MinValueValidator(0)], null=True, blank=True)
+    hdc = models.FloatField('DC Field', validators=[MaxValueValidator(70000), MinValueValidator(0)], null=True, blank=True)
+    tc = models.FloatField('Curie Temperature', validators=[MaxValueValidator(10000), MinValueValidator(0)], null=True, blank=True)
     info = JSONField(default=default_compound_info)
 
     def __str__(self):
