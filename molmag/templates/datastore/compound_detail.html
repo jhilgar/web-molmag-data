@@ -1,11 +1,20 @@
 {% extends "search.html" %}
 
 {% block content %}
-  <h1>Title: {{ magnet.title }}</h1>
+  <h1>Entry: {{ compound.doi }}</h1>
 
-  <p><strong>Compound :</strong> {{ magnet.compound }}</a></p> 
-  <p><strong>Dimension :</strong> {{ magnet.dimension }}</p>
-  <p><strong>U effective :</strong> {{ magnet.Ueffective }}</p> 
-  <p><strong>DOI:</strong> <a href="https://www.google.com/search?q={{ magnet.doi }}">{{ magnet.doi }} </a>
+  <p><strong>Formula :</strong> {{ compound.formula }}</a></p> 
+  <p><strong>Dimension :</strong> {{ compound.dimensionality }}</p>
+  <p><strong>Effective Barrier :</strong> {{ compound.ueff }}</p>
+  <p><strong>DC Field :</strong> {{ compound.hdc }}</a></p>
+  <p><strong>τ0 :</strong> {{ compound.tau0 }}</a></p>
+  <p><strong>Curie Temperature :</strong> {{ compound.tc }}</a></p>   
+  <p><strong>CCDC :</strong> {{ compound.ccdc }}</p>
+  <p><strong>DOI:</strong> <a href="https://www.google.com/search?q={{ compound.doi }}">{{ compound.doi }} </a>
+  <p><strong>U effective :</strong> {{ compound.ueff }}</p>
+  
+  <p><strong>General Information :</strong> {{ compound.info }}</p>
+  <p><strong>Created On :</strong> {{ compound.created_on }}</p>
+  <p><strong>Updated On :</strong> {{ compound.updated_on }}</p>  
 {% endblock %}
 
