@@ -49,14 +49,16 @@ def index(request):
     x2 = x1 + 1
     x3 = x1 + 2
 
-	
+    doix1 = num_compounds - 4
+    doix2 = doix1 + 1 
+    doix3 = doix2 + 2 
 	##Featured entries
     
     fst_feat = Compound.objects.values_list('doi', flat=True).get(pk=x1)
     fst_comp = Compound.objects.values_list('formula', flat=True).get(pk=x1)
     fst_ueff = Compound.objects.values_list('ueff', flat=True).get(pk=x1)
     fst_dim = Compound.objects.values_list('dimensionality', flat=True).get(pk=x1)
-    fst_doi = Reference.objects.values_list('doi', flat=True).get(pk=1)
+    fst_doi = Reference.objects.values_list('doi', flat=True).get(pk=doix1)
     fst_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x1)
     fst_info = Compound.objects.values_list('info', flat=True).get(pk=x1)
 	
@@ -64,7 +66,7 @@ def index(request):
     snd_comp = Compound.objects.values_list('formula', flat=True).get(pk=x2)
     snd_ueff = Compound.objects.values_list('ueff', flat=True).get(pk=x2)
     snd_dim = Compound.objects.values_list('dimensionality', flat=True).get(pk=x2)
-    snd_doi = Reference.objects.values_list('doi', flat=True).get(pk=2)
+    snd_doi = Reference.objects.values_list('doi', flat=True).get(pk=doix2)
     snd_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x2)
     snd_info = Compound.objects.values_list('info', flat=True).get(pk=x2)
 	
@@ -72,7 +74,7 @@ def index(request):
     trd_comp = Compound.objects.values_list('formula', flat=True).get(pk=x3)
     trd_ueff = Compound.objects.values_list('ueff', flat=True).get(pk=x3)
     trd_dim = Compound.objects.values_list('dimensionality', flat=True).get(pk=x3)
-    trd_doi = Reference.objects.values_list('doi', flat=True).get(pk=3)
+    trd_doi = Reference.objects.values_list('doi', flat=True).get(pk=doix3)
     trd_update = Compound.objects.values_list('updated_on', flat=True).get(pk=x3)
     trd_info = Compound.objects.values_list('info', flat=True).get(pk=x3)
 	
