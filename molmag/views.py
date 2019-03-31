@@ -44,11 +44,11 @@ def index(request):
 	# 3D Magnets (dimensionality = '3')
     num_3d = Compound.objects.filter(dimensionality='3').count()
 	
-	##logic for selecting 3 magnets based on the total db size, the selection only changes as the DB has more entries added.
+	##logic for selecting 3 compounds based on the total db size, the selection only changes as the DB has more entries added.
     x1 = num_compounds
     x2 = x1 + 1
     x3 = x1 + 2
-
+    ## logic for selecting the correct reference doi from the Reference model.
     doix1 = num_compounds - 4
     doix2 = doix1 + 1 
     doix3 = doix1 + 2 
