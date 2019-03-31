@@ -1,0 +1,11 @@
+{% extends "search.html" %}
+
+{% block content %}
+  <h1>Title: {{ magnet.title }}</h1>
+
+  <p><strong>Compound :</strong> {{ magnet.compound }}</a></p> 
+  <p><strong>Dimension :</strong> {{ magnet.dimension }}</p>
+  <p><strong>U effective :</strong> {{ magnet.Ueffective }}</p> 
+  <p><strong>DOI:</strong> <a href="https://www.google.com/search?q={{ magnet.doi }}">{{ magnet.doi }} </a>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends "search.html" %}
+
+{% block content %}
+  <h1>Compound List</h1>
+  {% if compound_list %}
+  <ul>
+    {% for compound in compound_list %}
+      <li>
+        <a href="{{ compound.get_absolute_url }}">{{ compound.doi }}</a> Updated on : {{compound.updated_on}}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no compounds in the database.</p>
+  {% endif %}       
+{% endblock %}

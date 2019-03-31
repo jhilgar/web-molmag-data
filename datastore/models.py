@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import JSONField
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.urls import reverse
 
 def default_reference_info():
     return {
@@ -34,7 +35,13 @@ class Compound(models.Model):
     hdc = models.FloatField('DC Field', validators=[MaxValueValidator(70000), MinValueValidator(0)], null=True, blank=True)
     tau0 = models.FloatField('τ₀', null=True, blank=True)
     tc = models.FloatField('Curie Temperature', validators=[MaxValueValidator(10000), MinValueValidator(0)], null=True, blank=True)
-    info = JSONField(default=default_compound_info, null=True, blank=True)
+    info = JSONField(default=default_compound_info, null=True, blank=True)      
+    created_on = models.DateTimeField(auto_now_add=True)  
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return str(self.doi) + ' - ' + str(self.formula)
+    
+    def get_absolute_url(self):
+        """Returns the url to access a particular compound instance."""
+        return reverse('magnet-detail', args=[str(self.id)])

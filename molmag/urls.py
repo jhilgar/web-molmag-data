@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from molmag.views import HomePageView
+from molmag.views import AboutPageView, SearchPageView, DocumentationPageView, MagnetListView, MagnetDetailView, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-	path('', HomePageView.as_view(), name='home'),
+    path('', index, name='index'),
+    path('about/', AboutPageView.as_view(), name='about'),
+    path('documentation/', DocumentationPageView.as_view(), name='documentation'),
+    path('search/', MagnetListView.as_view(), name='search'),
+    path('search/<int:pk>', MagnetDetailView.as_view(), name='magnet-detail'),
+
 ]
