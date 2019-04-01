@@ -55,9 +55,9 @@ def index(request):
     doix2 = doix1 + 1 
     doix3 = doix1 + 2 
 	
-    imgx1 = random.randint(1,4)
-    imgx2 = random.randint(1,4)
-    imgx3 = random.randint(1,4)
+    imgx1 = random.randint(10,18)
+    imgx2 = random.randint(10,18)
+    imgx3 = random.randint(10,18)
 
 	##Featured entries
     
