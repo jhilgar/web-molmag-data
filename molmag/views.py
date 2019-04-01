@@ -2,6 +2,7 @@ from django.views.generic.base import TemplateView
 from django.views import generic
 from django.shortcuts import render
 from datastore.models import Compound, Reference
+import random
 
 
 class AboutPageView(TemplateView):
@@ -53,6 +54,11 @@ def index(request):
     doix1 = num_compounds - 4
     doix2 = doix1 + 1 
     doix3 = doix1 + 2 
+	
+    imgx1 = random.randint(1,4)
+    imgx2 = random.randint(1,4)
+    imgx3 = random.randint(1,4)
+
 	##Featured entries
     
     fst_feat = Compound.objects.values_list('doi', flat=True).get(pk=x1)
@@ -90,7 +96,11 @@ def index(request):
 		'num_1d': num_1d,
 		'num_2d': num_2d,
 		'num_3d': num_3d,
-		'num_visits':num_visits,
+		'num_visits': num_visits,
+		'imgx1': imgx1,
+		'imgx2': imgx2,
+		'imgx3': imgx3,
+		
 		
 		'fst_feat': fst_feat,
 		'fst_comp': fst_comp,
